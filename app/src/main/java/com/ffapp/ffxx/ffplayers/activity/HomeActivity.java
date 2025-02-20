@@ -17,7 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
-import com.ffapp.ffxx.ffplayers.BuildConfig;
+
 import com.ffapp.ffxx.ffplayers.R;
 import com.pesonal.adsdk.AppManage;
 
@@ -61,7 +61,7 @@ public class HomeActivity extends AppCompatActivity {
                     shareIntent.setType("text/plain");
                     shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Sax Video Player");
                     String shareMessage= "\nLet me recommend you this application\n\n";
-                    shareMessage = shareMessage + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID +"\n\n";
+                    shareMessage = shareMessage + "https://play.google.com/store/apps/details?id="  +"\n\n";
                     shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
                     startActivity(Intent.createChooser(shareIntent, "choose one"));
                 } catch(Exception e) {

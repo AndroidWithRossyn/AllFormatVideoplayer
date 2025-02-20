@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -27,7 +28,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
-import com.ffapp.ffxx.ffplayers.BuildConfig;
 import com.ffapp.ffxx.ffplayers.R;
 import com.ffapp.ffxx.ffplayers.adapter.NavigationMenuAdapter;
 import com.ffapp.ffxx.ffplayers.comman.ModelMenu;
@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements NavigationClickLi
     ArrayList<ModelMenu> modelMenus = new ArrayList<>();
     ImageView img_btn, gall_img, status_img;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -354,7 +355,7 @@ public class MainActivity extends AppCompatActivity implements NavigationClickLi
                     shareIntent.setType("text/plain");
                     shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Sax Video Player");
                     String shareMessage = "\nLet me recommend you this application\n\n";
-                    shareMessage = shareMessage + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID + "\n\n";
+                    shareMessage = shareMessage + "https://play.google.com/store/apps/details?id=" + /*BuildConfig.APPLICATION_ID +*/ "\n\n";
                     shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
                     startActivity(Intent.createChooser(shareIntent, "choose one"));
                 } catch (Exception e) {
@@ -388,6 +389,7 @@ public class MainActivity extends AppCompatActivity implements NavigationClickLi
 
     @Override
     public void onBackPressed() {
+        super.onBackPressed();
         AppManage.getInstance(MainActivity.this).showInterstitialAd(MainActivity.this, new AppManage.MyCallback() {
             public void callbackCall() {
                 startActivity(new Intent(getApplicationContext(), ThanksActivity.class));

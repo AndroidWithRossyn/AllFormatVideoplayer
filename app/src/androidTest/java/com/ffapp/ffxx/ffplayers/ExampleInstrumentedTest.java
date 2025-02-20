@@ -1,4 +1,4 @@
-package com.ffapp.saxvideoplayer;
+package com.ffapp.ffxx.ffplayers;
 
 import android.content.Context;
 
@@ -21,7 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-
-        assertEquals("com.hdvideo.saxvideoplayer", appContext.getPackageName());
+        assertEquals("com.ffapp.ffxx.ffplayers", appContext.getPackageName());
     }
 }

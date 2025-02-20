@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Color;
@@ -31,7 +32,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.ffapp.ffxx.ffplayers.BuildConfig;
 import com.ffapp.ffxx.ffplayers.R;
 import com.ffapp.ffxx.ffplayers.adapter.PrivateAdapter;
 import com.ffapp.ffxx.ffplayers.adapter.PrivateGridAdapter;
@@ -61,6 +61,7 @@ public class UnLockFileActivity extends AppCompatActivity implements PrivateAdap
     TextView title_name;
     SwipeRefreshLayout swip_btn;
     RelativeLayout back_btn,native_ads;
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -272,7 +273,7 @@ public class UnLockFileActivity extends AppCompatActivity implements PrivateAdap
             shareIntent.setType("text/plain");
             shareIntent.putExtra(Intent.EXTRA_SUBJECT, getResources().getString(R.string.app_name));
             String shareMessage = "Download app";
-            shareMessage = shareMessage + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID + "\n\n";
+            shareMessage = shareMessage + "https://play.google.com/store/apps/details?id=" + /*BuildConfig.APPLICATION_ID + */"\n\n";
             shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
             startActivity(Intent.createChooser(shareIntent, "choose one"));
         } catch (Exception e) {

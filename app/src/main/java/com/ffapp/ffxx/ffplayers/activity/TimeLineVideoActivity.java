@@ -18,7 +18,7 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import com.ffapp.ffxx.ffplayers.BuildConfig;
+
 import com.ffapp.ffxx.ffplayers.R;
 import com.ffapp.ffxx.ffplayers.TimerView.ImageLoad;
 import com.ffapp.ffxx.ffplayers.TimerView.TimeLineModel;
@@ -98,7 +98,7 @@ public class TimeLineVideoActivity extends AppCompatActivity implements Timeline
             shareIntent.setType("text/plain");
             shareIntent.putExtra(Intent.EXTRA_SUBJECT, getResources().getString(R.string.app_name));
             String shareMessage = "Download app";
-            shareMessage = shareMessage + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID + "\n\n";
+            shareMessage = shareMessage + "https://play.google.com/store/apps/details?id="  /*+BuildConfig.APPLICATION_ID*/ + "\n\n";
             shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
             startActivity(Intent.createChooser(shareIntent, "choose one"));
         } catch (Exception e) {

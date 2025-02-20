@@ -150,20 +150,20 @@ public class ADS_SplashActivity extends AppCompatActivity {
 
 
         final String sdfsdf;
-        if (BuildConfig.DEBUG) {
-            sdfsdf = "TRSOFTAG12789I";
-        } else {
-            sdfsdf = "TRSOFTAG82382I";
-        }
+        sdfsdf = "TRSOFTAG12789I";
+//        if (BuildConfig.DEBUG) {
+//        } else {
+//            sdfsdf = "TRSOFTAG82382I";
+//        }
 
-        Log.e("Responsive",bytemode);
+        Log.e("Responsive", bytemode);
         RequestQueue requestQueue = Volley.newRequestQueue(activity);
         StringRequest strRequest = new StringRequest(Request.Method.POST, bytemode,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response1) {
                         try {
-                            Log.e("Responsive",response1);
+                            Log.e("Responsive", response1);
                             JSONObject response = new JSONObject(response1);
                             try {
                                 boolean status = response.getBoolean("STATUS");
@@ -293,10 +293,10 @@ public class ADS_SplashActivity extends AppCompatActivity {
                 }) {
             @Override
             protected Map<String, String> getParams() {
-                Log.e("responisive ",activity.getPackageName());
-                Log.e("responisive ",getKeyHash(activity));
-                Log.e("responisive " ,String.valueOf(addfdsf123));
-                Log.e("responisive ",sdfsdf);
+                Log.e("responisive ", activity.getPackageName());
+                Log.e("responisive ", getKeyHash(activity));
+                Log.e("responisive ", String.valueOf(addfdsf123));
+                Log.e("responisive ", sdfsdf);
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("PHSUGSG6783019KG", activity.getPackageName());
                 params.put("AFHJNTGDGD563200K", getKeyHash(activity));

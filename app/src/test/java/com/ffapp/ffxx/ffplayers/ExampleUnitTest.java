@@ -1,4 +1,4 @@
-package com.ffapp.saxvideoplayer;
+package com.ffapp.ffxx.ffplayers;
 
 import org.junit.Test;
 
